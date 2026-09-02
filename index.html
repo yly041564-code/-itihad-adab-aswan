@@ -1,1 +1,614 @@
-hii
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>اتحاد طلاب كلية الآداب - جامعة أسوان</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Tahoma, Arial, sans-serif;
+    }
+
+    body {
+      background: #f5f5f5;
+      color: #222;
+      line-height: 1.8;
+    }
+
+    header {
+      background: linear-gradient(135deg, #111827, #1f2937);
+      color: white;
+      padding: 18px 7%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 3px 12px rgba(0,0,0,.2);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .logo-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: #c9a227;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #111;
+      font-size: 22px;
+    }
+
+    nav {
+      display: flex;
+      gap: 22px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: .3s;
+    }
+
+    nav a:hover {
+      color: #d4af37;
+    }
+
+    .hero {
+      min-height: 75vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      padding: 60px 20px;
+      background:
+        linear-gradient(rgba(0,0,0,.68), rgba(0,0,0,.68)),
+        linear-gradient(135deg, #1f2937, #111827);
+    }
+
+    .hero-content {
+      max-width: 850px;
+    }
+
+    .hero h1 {
+      font-size: 46px;
+      margin-bottom: 18px;
+      color: #d4af37;
+    }
+
+    .hero h2 {
+      font-size: 28px;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      font-size: 19px;
+      color: #eee;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 28px;
+      padding: 12px 30px;
+      background: #d4af37;
+      color: #111;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: bold;
+      transition: .3s;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      background: #f0cf55;
+    }
+
+    section {
+      padding: 70px 7%;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .section-title h2 {
+      font-size: 32px;
+      color: #172033;
+      margin-bottom: 10px;
+    }
+
+    .section-title span {
+      display: block;
+      width: 70px;
+      height: 4px;
+      background: #d4af37;
+      margin: auto;
+    }
+
+    .about {
+      background: white;
+    }
+
+    .about-content {
+      max-width: 900px;
+      margin: auto;
+      text-align: center;
+      font-size: 18px;
+      color: #555;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background: white;
+      padding: 30px 22px;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0 5px 20px rgba(0,0,0,.08);
+      transition: .3s;
+    }
+
+    .card:hover {
+      transform: translateY(-7px);
+    }
+
+    .card-icon {
+      font-size: 42px;
+      margin-bottom: 15px;
+    }
+
+    .card h3 {
+      color: #172033;
+      margin-bottom: 10px;
+    }
+
+    .activities {
+      background: #eef0f3;
+    }
+
+    .activity-card {
+      overflow: hidden;
+      padding: 0;
+    }
+
+    .activity-image {
+      height: 190px;
+      background: linear-gradient(135deg, #374151, #111827);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #d4af37;
+      font-size: 55px;
+    }
+
+    .activity-text {
+      padding: 22px;
+    }
+
+    .news-list {
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .news {
+      background: white;
+      margin-bottom: 18px;
+      padding: 22px;
+      border-right: 5px solid #d4af37;
+      border-radius: 8px;
+      box-shadow: 0 3px 12px rgba(0,0,0,.06);
+    }
+
+    .news h3 {
+      color: #172033;
+      margin-bottom: 8px;
+    }
+
+    .contact {
+      background: #172033;
+      color: white;
+    }
+
+    .contact .section-title h2 {
+      color: white;
+    }
+
+    .contact-box {
+      max-width: 850px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .contact-item {
+      text-align: center;
+      padding: 25px;
+      background: rgba(255,255,255,.08);
+      border-radius: 12px;
+    }
+
+    .contact-item strong {
+      display: block;
+      color: #d4af37;
+      font-size: 20px;
+      margin-bottom: 8px;
+    }
+
+    footer {
+      background: #0d1117;
+      color: #bbb;
+      text-align: center;
+      padding: 22px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 768px) {
+
+      header {
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      nav {
+        gap: 12px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      nav a {
+        font-size: 14px;
+      }
+
+      .hero h1 {
+        font-size: 32px;
+      }
+
+      .hero h2 {
+        font-size: 22px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      section {
+        padding: 50px 5%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header>
+
+    <div class="logo">
+      <div class="logo-icon">ات</div>
+      <div>
+        اتحاد طلاب كلية الآداب<br>
+        جامعة أسوان
+      </div>
+    </div>
+
+    <nav>
+      <a href="#home">الرئيسية</a>
+      <a href="#about">عن الاتحاد</a>
+      <a href="#activities">الأنشطة</a>
+      <a href="#news">الأخبار</a>
+      <a href="#contact">تواصل معنا</a>
+    </nav>
+
+  </header>
+
+
+  <!-- Hero -->
+  <section class="hero" id="home">
+
+    <div class="hero-content">
+
+      <h1>اتحاد طلاب كلية الآداب</h1>
+
+      <h2>جامعة أسوان</h2>
+
+      <p>
+        صوت الطلاب.. طاقة الشباب.. وصناعة المستقبل
+      </p>
+
+      <a href="#activities" class="btn">
+        تعرف على أنشطة الاتحاد
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- About -->
+  <section class="about" id="about">
+
+    <div class="section-title">
+
+      <h2>عن اتحاد الطلاب</h2>
+
+      <span></span>
+
+    </div>
+
+    <div class="about-content">
+
+      <p>
+        اتحاد طلاب كلية الآداب بجامعة أسوان هو الكيان الطلابي
+        الذي يمثل طلاب الكلية، ويساهم في تنظيم الأنشطة والفعاليات
+        الطلابية والثقافية والرياضية والاجتماعية، والعمل على دعم
+        الطلاب وتنمية مهاراتهم ومواهبهم.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- Departments / Services -->
+  <section>
+
+    <div class="section-title">
+
+      <h2>مجالات الاتحاد</h2>
+
+      <span></span>
+
+    </div>
+
+    <div class="cards">
+
+      <div class="card">
+        <div class="card-icon">🎭</div>
+        <h3>النشاط الفني</h3>
+        <p>
+          اكتشاف وتنمية المواهب الفنية والإبداعية لدى الطلاب.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">🏆</div>
+        <h3>النشاط الرياضي</h3>
+        <p>
+          تنظيم المسابقات والبطولات والفعاليات الرياضية.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">📚</div>
+        <h3>النشاط الثقافي</h3>
+        <p>
+          مسابقات وندوات وفعاليات ثقافية ومعرفية.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">🤝</div>
+        <h3>النشاط الاجتماعي</h3>
+        <p>
+          دعم الطلاب وتنظيم المبادرات والأنشطة الاجتماعية.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- Activities -->
+  <section class="activities" id="activities">
+
+    <div class="section-title">
+
+      <h2>أعمال وأنشطة الاتحاد</h2>
+
+      <span></span>
+
+    </div>
+
+    <div class="cards">
+
+      <div class="card activity-card">
+
+        <div class="activity-image">
+          🎓
+        </div>
+
+        <div class="activity-text">
+
+          <h3>حفل تخرج طلاب كلية الآداب</h3>
+
+          <p>
+            تنظيم والمشاركة في فعاليات حفل تخرج طلاب الفرقة الرابعة
+            بكلية الآداب.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="card activity-card">
+
+        <div class="activity-image">
+          🏃
+        </div>
+
+        <div class="activity-text">
+
+          <h3>الفعاليات الرياضية</h3>
+
+          <p>
+            مشاركة طلاب الكلية في الفعاليات والأنشطة الرياضية
+            على مستوى الجامعة.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="card activity-card">
+
+        <div class="activity-image">
+          🎨
+        </div>
+
+        <div class="activity-text">
+
+          <h3>الأنشطة الفنية والثقافية</h3>
+
+          <p>
+            دعم المواهب الطلابية والمشاركة في المسابقات
+            والفعاليات المختلفة.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- News -->
+  <section id="news">
+
+    <div class="section-title">
+
+      <h2>آخر أخبار الاتحاد</h2>
+
+      <span></span>
+
+    </div>
+
+    <div class="news-list">
+
+      <div class="news">
+
+        <h3>فعاليات اتحاد طلاب كلية الآداب</h3>
+
+        <p>
+          تابعوا أحدث أخبار وفعاليات اتحاد طلاب كلية الآداب
+          بجامعة أسوان من خلال الموقع الرسمي.
+        </p>
+
+      </div>
+
+
+      <div class="news">
+
+        <h3>إعلانات الطلاب</h3>
+
+        <p>
+          سيتم نشر الإعلانات والتعليمات الخاصة بالطلاب
+          والأنشطة المختلفة هنا.
+        </p>
+
+      </div>
+
+
+      <div class="news">
+
+        <h3>المشاركة الطلابية</h3>
+
+        <p>
+          الاتحاد يرحب بمشاركة جميع الطلاب في الأنشطة
+          والفعاليات المختلفة.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- Contact -->
+  <section class="contact" id="contact">
+
+    <div class="section-title">
+
+      <h2>تواصل معنا</h2>
+
+      <span></span>
+
+    </div>
+
+    <div class="contact-box">
+
+      <div class="contact-item">
+
+        <strong>📍 المكان</strong>
+
+        كلية الآداب<br>
+        جامعة أسوان
+
+      </div>
+
+
+      <div class="contact-item">
+
+        <strong>📱 التواصل</strong>
+
+        عبر صفحات الاتحاد الرسمية
+
+      </div>
+
+
+      <div class="contact-item">
+
+        <strong>📢 الأخبار</strong>
+
+        تابع أحدث أخبار الاتحاد
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- Footer -->
+  <footer>
+
+    <p>
+      © 2026 اتحاد طلاب كلية الآداب - جامعة أسوان
+    </p>
+
+    <p>
+      جميع الحقوق محفوظة
+    </p>
+
+  </footer>
+
+
+</body>
+</html>
